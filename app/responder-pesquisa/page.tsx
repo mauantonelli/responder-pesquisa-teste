@@ -7,7 +7,6 @@ import { MyHead } from "../components/Head";
 import AccordionDemo from "./components/FiltrosDrop";
 import AccordionQuestion from "./components/QuestionDrop";
 import { Edit2Icon, NotebookPen } from "lucide-react";
-import { toast } from "materialize-css";
 interface SortedColumn {
     name: boolean;
     department: boolean;
@@ -211,7 +210,8 @@ const SurveyPage = () => {
         addOpenQuention(id)
     }
     function handleSave() {
-      toast({html:"Pesquisa salva com sucesso"})
+        const { toast } = require("materialize-css");
+        toast({html:"Pesquisa salva com sucesso"})
     }
     function handleFinal() {
         if (confirm("Tem certeza que deseja finalizar sua pesquisa? Essa ação não pode ser desfeita.")) { }
